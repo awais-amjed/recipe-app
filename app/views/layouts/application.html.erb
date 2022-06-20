@@ -8,9 +8,11 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+
+    <%= stylesheet_link_tag "food", "data-turbo-track": "reload" %>
   </head>
 
-  <body>
+  <body class="content">
     <%= yield %>
   </body>
 </html>
