@@ -5,6 +5,8 @@ ruby '3.1.2'
 
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 
+gem 'devise-bootstrap-views', '~> 1.0'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.3'
 
@@ -49,8 +51,10 @@ gem 'tzinfo-data'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
 
+gem 'devise', '~> 4.8', '>= 4.8.1'
+
 # Use Sass to process CSS
-# gem "sassc-rails"
+gem 'sassc-rails'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
