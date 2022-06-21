@@ -11,6 +11,8 @@ class RecipesController < ApplicationController
 
   # GET /recipes/new
   def new
+    redirect_to recipes_path, alert: 'You must be logged in to add a recipe.' if current_user.nil?
+
     @recipe = Recipe.new
   end
 
