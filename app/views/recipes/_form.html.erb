@@ -1,22 +1,22 @@
 <%= form_with(model: recipe, url: recipes_path) do |form| %>
   <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name, class: 'form-control' %>
+    <%= form.text_field :name, required: true, class: 'form-control' %>
   </div>
 
   <div class="form-group">
     <%= form.label 'Preparation time (in minutes)', style: "display: block" %>
-    <%= form.number_field :preparation_time, class: 'form-control' %>
+    <%= form.number_field :preparation_time, required: true, step: '.1', class: 'form-control' %>
   </div>
 
   <div class="form-group">
     <%= form.label 'Cooking time (in minutes)', style: "display: block" %>
-    <%= form.number_field :cooking_time, class: 'form-control' %>
+    <%= form.number_field :cooking_time, required: true, step: '.1', class: 'form-control' %>
   </div>
 
   <div class="form-group">
     <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description, rows: 10, class: 'form-control' %>
+    <%= form.text_area :description, required: true, rows: 10, class: 'form-control' %>
   </div>
 
   <div class="form-group form-check">
