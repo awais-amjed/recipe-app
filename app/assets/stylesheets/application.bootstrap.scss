@@ -24,21 +24,32 @@
     }
   }
 
-  .recipe {
-    border: 3px solid black;
-    padding: 10px;
+  a {
+    text-decoration: none;
+    color: black;
+  }
 
-    .recipe-title-container {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-      text-align: center;
+  #recipes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 
-      h2 {
-        font-size: 1.3rem;
-        font-weight: 600;
+    .recipe {
+      border: 3px solid black;
+      padding: 10px;
+
+      .recipe-title-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        text-align: center;
+
+        h2 {
+          font-size: 1.3rem;
+          font-weight: 600;
+        }
       }
     }
   }
