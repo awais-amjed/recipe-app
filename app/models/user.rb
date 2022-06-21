@@ -5,7 +5,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
 
-  def has_role?(requested_role)
+  def role?(requested_role)
     role == requested_role.to_s
   end
 end
