@@ -6,6 +6,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable
 
          def admin?(requested_role)
-          role == requested_role.to_s
+          role = requested_role.to_s
         end
 end
