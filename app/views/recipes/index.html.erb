@@ -1,12 +1,12 @@
-<h1>Recipes</h1>
+<div id="recipe-page" class="container">
+  <div class="header">
+    <h1>Your Recipes</h1>
+    <%= button_to "New recipe", new_recipe_path, class: 'btn-success', method: :get %>
+  </div>
 
-<div id="recipes">
-  <% @recipes.each do |recipe| %>
-    <%= render recipe %>
-    <p>
-      <%= link_to "Show this recipe", user_recipe_path(current_user, recipe) %>
-    </p>
-  <% end %>
+  <div id="recipes">
+    <% @recipes.each do |recipe| %>
+      <%= render recipe %>
+    <% end %>
+  </div>
 </div>
-
-<%= link_to "New recipe", new_user_recipe_path %>

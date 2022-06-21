@@ -21,7 +21,7 @@ class RecipesController < ApplicationController
 
     respond_to do |format|
       if @recipe.save
-        format.html { redirect_to user_recipe_path(@recipe), notice: 'Recipe was successfully created.' }
+        format.html { redirect_to recipe_path(@recipe), notice: 'Recipe was successfully created.' }
         format.json { render :show, status: :created, location: @recipe }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -35,7 +35,7 @@ class RecipesController < ApplicationController
     @recipe.destroy
 
     respond_to do |format|
-      format.html { redirect_to user_recipes_path, notice: 'Recipe was successfully destroyed.' }
+      format.html { redirect_to recipes_path, notice: 'Recipe was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -45,6 +45,10 @@ class RecipesController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_recipe
     @recipe = Recipe.find(params[:id])
+  end
+
+  def set_user
+    @user = current_user
   end
 
   # Only allow a list of trusted parameters through.
