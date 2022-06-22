@@ -2,6 +2,8 @@ class RecipeFoodsController < ApplicationController
   before_action :set_recipe, only: %i[new create destroy]
 
   def new
+    redirect_to new_food_path, notice: 'You need to add a new food first' if Food.count.zero?
+
     @recipe_food = RecipeFood.new
   end
 

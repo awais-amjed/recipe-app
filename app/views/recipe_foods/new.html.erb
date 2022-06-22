@@ -1,16 +1,19 @@
 <div class="center-form">
-  <h1>Add food to <%= @recipe.name %></h1>
+  <h1>Add an ingredient to <%= @recipe.name %></h1>
 
   <%= form_with(model: @recipe_food, url: recipe_recipe_foods_path(@recipe)) do |form| %>
+
+    <%= form.label 'Select a food from the List' %>
+    <%= form.collection_select :food_id, Food.all, :id, :name %>
+
+
     <div class="form-group">
-      <%= form.label :quantity %>
+      <%= form.label 'Enter Quantity of selected food' %>
       <%= form.number_field :quantity, min: 1, required: true, class: 'form-control' %>
     </div>
 
-    <%= form.collection_select :food_id, Food.all, :id, :name, class: 'dropdown-menu' %>
-
     <div class="form-group">
-      <%= form.submit class: 'btn btn-primary' %>
+      <%= form.submit 'Add ingredient', class: 'btn btn-primary' %>
     </div>
   <% end %>
 
