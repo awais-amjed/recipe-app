@@ -1,0 +1,20 @@
+<div class="center-form">
+  <h1>Add food to <%= @recipe.name %></h1>
+
+  <%= form_with(model: @recipe_food, url: recipe_recipe_foods_path(@recipe)) do |form| %>
+    <div class="form-group">
+      <%= form.label :quantity %>
+      <%= form.number_field :quantity, min: 1, required: true, class: 'form-control' %>
+    </div>
+
+    <%= form.collection_select :food_id, Food.all, :id, :name, class: 'dropdown-menu' %>
+
+    <div class="form-group">
+      <%= form.submit class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+
+  <div>
+    <%= link_to "Back to recipe", recipe_path(@recipe), method: :get, class: 'btn btn-dark' %>
+  </div>
+</div>

@@ -7,7 +7,9 @@ class RecipesController < ApplicationController
     @recipes = @user.recipes
   end
 
-  def show; end
+  def show
+    @recipe_foods = @recipe.recipe_foods.includes(:food)
+  end
 
   def new
     @recipe = Recipe.new

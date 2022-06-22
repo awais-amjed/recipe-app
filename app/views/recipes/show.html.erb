@@ -14,7 +14,7 @@
 
   <div class="spaced-container">
     <button class="btn btn-dark">Generate shopping list</button>
-    <button class="btn btn-success">Add Ingredient</button>
+    <%= button_to  'Add Ingredient', new_recipe_recipe_food_path(@recipe), class: 'btn btn-success', method: :get %>
   </div>
 
   <hr>
@@ -29,12 +29,16 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <td>1</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td><button>Modify</button></td>
-    </tr>
+    <% @recipe_foods.each do |recipe_food| %>
+      <tr>
+        <td><%= recipe_food.food.name %></td>
+        <td><%= recipe_food.quantity %></td>
+        <td>$ <%= recipe_food.quantity * recipe_food.food.price %></td>
+        <td>
+          <%= button_to 'Remove', recipe_recipe_food_path(@recipe, recipe_food), class: 'btn btn-danger', method: :delete %>
+        </td>
+      </tr>
+    <% end %>
     </tbody>
   </table>
 
