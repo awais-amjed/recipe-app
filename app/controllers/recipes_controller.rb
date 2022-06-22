@@ -1,4 +1,6 @@
 class RecipesController < ApplicationController
+  load_and_authorize_resource
+
   before_action :set_recipe, only: %i[show destroy]
   before_action :set_user
   before_action :redirect_if_not_signed_in
