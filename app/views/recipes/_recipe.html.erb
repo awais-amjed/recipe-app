@@ -1,0 +1,11 @@
+<%= link_to recipe do %>
+  <div id="<%= dom_id recipe %>" class="recipe row gx-5">
+    <div class="recipe-title-container col-2">
+      <h2><%= recipe.name %></h2>
+      <%= button_to 'Remove', recipe, method: :delete, class: 'btn btn-danger'%>
+    </div>
+    <div class="recipe-description-container col-10">
+      <p><%= recipe.description %></p>
+    </div>
+  </div>
+<% end %>
