@@ -63,10 +63,6 @@ class RecipesController < ApplicationController
     @user = current_user
   end
 
-  def redirect_if_not_signed_in
-    redirect_to new_user_session_path, alert: 'You must be logged in access this page' if @user.nil?
-  end
-
   # Only allow a list of trusted parameters through.
   def recipe_params
     params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)

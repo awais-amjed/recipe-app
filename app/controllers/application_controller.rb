@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
 
   before_action :update_allowed_parameters, if: :devise_controller?
 
+  def redirect_if_not_signed_in
+    redirect_to new_user_session_path, alert: 'You must be logged in access this page' if current_user.nil?
+  end
+
   protected
 
   def update_allowed_parameters
