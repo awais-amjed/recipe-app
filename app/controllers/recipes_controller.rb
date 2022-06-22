@@ -37,6 +37,17 @@ class RecipesController < ApplicationController
     end
   end
 
+  def get_time_in_string_format(time)
+    m = time % 60
+    minutes = m == 1 ? '1 minute' : "#{m} minutes"
+    h = (time / 60).floor
+    hours = h == 1 ? '1 hour ' : "#{h} hours "
+
+    "#{hours unless h.zero?}#{minutes}"
+  end
+
+  helper_method :get_time_in_string_format
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
