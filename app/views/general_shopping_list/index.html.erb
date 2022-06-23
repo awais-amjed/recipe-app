@@ -1,7 +1,11 @@
 <div id="general-shopping-list-page" class="content">
-  <h1>General Shopping List</h1>
-  <p> Amount of food items to buy:<%= @shopping_list.count %> </p>
-  <p>Total value of food needed:<%= @shopping_list.reduce(0) { |sum, item| sum + (item[:food].price * item[:quantity]) } %> </p>
+  <h1>Shopping List</h1>
+
+  <div class="d-flex justify-content-between">
+    <p><strong>Amount of food items to buy:</strong> <%= @shopping_list.count %></p>
+    <p><strong>Total value of food needed:</strong> <%= total_price %> </p>
+  </div>
+
   <table class="table">
   <thead>
   <tr>

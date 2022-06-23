@@ -11,6 +11,12 @@ class GeneralShoppingListController < ApplicationController
     end
   end
 
+  def total_price
+    @shopping_list.reduce(0) { |sum, item| sum + (item[:food].price * item[:quantity]) }
+  end
+
+  helper_method :total_price
+
   private
 
   def recipe_foods_of_other_users
