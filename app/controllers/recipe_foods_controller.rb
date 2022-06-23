@@ -1,6 +1,4 @@
 class RecipeFoodsController < ApplicationController
-  load_and_authorize_resource
-
   before_action :set_recipe, only: %i[new create destroy]
 
   def new

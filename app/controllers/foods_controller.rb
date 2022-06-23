@@ -1,6 +1,4 @@
 class FoodsController < ApplicationController
-  load_and_authorize_resource
-
   before_action :redirect_if_not_signed_in, only: %i[new create]
 
   def index
