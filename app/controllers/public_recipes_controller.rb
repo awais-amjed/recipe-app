@@ -1,6 +1,6 @@
 class PublicRecipesController < ApplicationController
   def index
-    @public_recipes = Recipe.where(public: true).order(created_at: :desc).map do |public_recipe|
+    @public_recipes = Recipe.where(public: true).includes(:user, :foods).order(created_at: :desc).map do |public_recipe|
       {
         id: public_recipe.id,
         name: public_recipe.name,
