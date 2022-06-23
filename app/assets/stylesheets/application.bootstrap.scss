@@ -6,6 +6,10 @@
   font-family: 'Poppins', sans-serif;
 }
 
+body {
+  background-color: white;
+}
+
 #recipe-details-page {
   padding: 50px 0;
   display: flex;
@@ -69,6 +73,30 @@
           font-weight: 600;
         }
       }
+    }
+  }
+}
+
+#header {
+  display: flex;
+  position: fixed;
+  z-index: 2;
+  height: 70px;
+  inset: 0;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  .header-container {
+    margin: 0 10%;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+    ul {
+      display: flex;
+      list-style: none;
+      gap: 10px;
     }
   }
 }

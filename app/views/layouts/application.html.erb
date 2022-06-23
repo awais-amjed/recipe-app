@@ -13,6 +13,8 @@
   </head>
 
   <body class="content">
+    <%= render 'layouts/header' %>
+
     <%= yield %>
 
     <% flash.each do |key, value| %>
