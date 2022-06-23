@@ -1,0 +1,21 @@
+<div id="header">
+  <div class="header-container">
+    <%= link_to root_url do %>
+      <h3>Eggs Benedict</h3>
+    <%end %>
+    <ul class="nav">
+      <li class = "nav-items">
+        <%= button_to "Public Recipes", public_recipes_path, class: 'btn btn-light', method: :get %>
+      </li>
+      <li class = "nav-items">
+        <%= button_to "Foods", foods_path, class: 'btn btn-light', method: :get %>
+      </li>
+      <li class = "nav-items">
+        <%= button_to "My Recipes", recipes_path, class: 'btn btn-light', method: :get %>
+      </li>
+      <li class = "nav-items">
+        <%= button_to "Shopping List", general_shopping_list_index_path, class: 'btn btn-light', method: :get %>
+      </li>
+    </ul>
+  </div>
+</div>
