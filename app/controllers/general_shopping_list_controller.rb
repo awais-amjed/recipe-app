@@ -1,4 +1,6 @@
 class GeneralShoppingListController < ApplicationController
+  before_action :redirect_if_not_signed_in
+
   def index
     @recipe_foods = recipe_foods_of_other_users
     @foods = @recipe_foods.map(&:food).uniq
