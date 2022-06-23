@@ -1,0 +1,27 @@
+<div id="general-shopping-list-page" class="content">
+  <h1>Shopping List</h1>
+
+  <div class="d-flex justify-content-between">
+    <p><strong>Amount of food items to buy:</strong> <%= @shopping_list.count %></p>
+    <p><strong>Total value of food needed:</strong> <%= total_price %> </p>
+  </div>
+
+  <table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Food</th>
+    <th scope="col">Quantity</th>
+    <th scope="col">Price</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @shopping_list.each do |item| %>
+    <tr>
+      <td><%= item[:food].name %></td>
+      <td><%= item[:quantity] %></td>
+      <td>$ <%= item[:quantity] * item[:food].price %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+</div>
