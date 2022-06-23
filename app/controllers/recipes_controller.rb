@@ -1,13 +1,15 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: %i[show destroy]
   before_action :set_user
-  before_action :redirect_if_not_signed_in
+  before_action :redirect_if_not_signed_in, except: %i[show]
 
   def index
     @recipes = @user.recipes
   end
 
   def show
+    redirect_if_not_signed_in unless @recipe.public
+
     @recipe_foods = @recipe.recipe_foods.includes(:food)
   end
 

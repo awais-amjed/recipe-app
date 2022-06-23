@@ -1,6 +1,6 @@
 <div id="recipe-details-page" class="container">
   <div class="spaced-container">
-    <%= button_to "< Back to recipes", recipes_path, class: 'btn btn-warning', method: :get %>
+    <div style="width: 200px"></div>
     <h1><%= @recipe.name %></h1>
     <% if can? :modify, @recipe %>
       <%= button_to "Destroy this recipe", @recipe, method: :delete, class: 'btn btn-danger' %>
