@@ -28,6 +28,16 @@ body {
   }
 }
 
+#general-shopping-list-page {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  h1 {
+    text-align: center;
+  }
+}
+
 #recipe-page {
   margin: 50px 0;
 
@@ -98,15 +108,5 @@ body {
       list-style: none;
       gap: 10px;
     }
-  }
-}
-
-#general-shopping-list-page {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-
-  h1 {
-    text-align: center;
   }
 }

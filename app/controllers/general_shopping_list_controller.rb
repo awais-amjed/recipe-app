@@ -6,7 +6,7 @@ class GeneralShoppingListController < ApplicationController
       {
         food:,
         quantity: @recipe_foods.select { |recipe_food| recipe_food.food_id == food.id }
-                               .reduce(0) { |sum, recipe_food| sum + recipe_food.quantity }
+          .reduce(0) { |sum, recipe_food| sum + recipe_food.quantity }
       }
     end
   end
