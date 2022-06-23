@@ -1,4 +1,6 @@
 class FoodsController < ApplicationController
+  before_action :redirect_if_not_signed_in, only: %i[new create]
+
   def index
     @foods = Food.all
   end
